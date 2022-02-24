@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:tiktok_clone/core/constants.dart';
 import 'package:tiktok_clone/models/video.dart';
@@ -64,14 +65,14 @@ class UploadVideoController extends GetxController {
         uid: uid,
         username: user['username'],
         profilePicture: user['profilePicture'],
-        views: 0,
+        shareCount: 0,
         likes: [],
-        commentCount: 0,        uploadedDate: DateTime.now().toIso8601String(),
+        commentCount: 0,
+        uploadedDate: Timestamp.now(),
         thumbnailUrl: thumbnailUrl,
       );
 
       await firestore.collection("videos").doc(videoId).set(video.toJson());
-
 
       print("successfully uploading video");
     } catch (error) {

@@ -1,17 +1,17 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:tiktok_clone/core/constants.dart';
-import 'package:tiktok_clone/core/routes.dart';
-import 'package:tiktok_clone/core/space_config.dart';
-import 'package:tiktok_clone/core/utils.dart';
-import 'package:tiktok_clone/views/widgets/custom_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tiktok_clone/views/widgets/custom_text_field.dart';
-import 'package:tiktok_clone/views/widgets/profile_image.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../../../core/constants.dart';
+import '../../../core/routes.dart';
+import '../../../core/space_config.dart';
+import '../../../core/utils.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_field.dart';
+import '../../widgets/profile_image.dart';
 
 /// Issues
 /// Not preview Network image

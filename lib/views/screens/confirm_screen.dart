@@ -1,12 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/controller/upload_video_controller.dart';
-import 'package:tiktok_clone/core/routes.dart';
-import 'package:tiktok_clone/core/space_config.dart';
-import 'package:tiktok_clone/views/widgets/custom_button.dart';
-import 'package:tiktok_clone/views/widgets/custom_video_player.dart';
 import 'package:video_player/video_player.dart';
+
+import '../../controller/upload_video_controller.dart';
+import '../../core/routes.dart';
+import '../../core/space_config.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_video_player.dart';
 
 class ConfirmScreen extends StatefulWidget {
   const ConfirmScreen({Key? key, required this.videoFile}) : super(key: key);

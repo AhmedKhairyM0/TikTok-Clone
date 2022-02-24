@@ -2,13 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tiktok_clone/controller/auth_controller.dart';
-import 'package:tiktok_clone/core/routes.dart';
-import 'package:tiktok_clone/views/screens/home_screen.dart';
-import 'package:tiktok_clone/views/screens/videos_screen.dart';
 
+import 'controller/auth_controller.dart';
 import 'controller/upload_video_controller.dart';
+import 'controller/video_controller.dart';
+import 'core/routes.dart';
 import 'core/theme.dart';
+import 'views/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,9 +32,8 @@ class MyApp extends StatelessWidget {
       title: 'TikTok Clone',
       debugShowCheckedModeBanner: false,
       theme: themeData(),
-      // onGenerateRoute: RouteGenerator.generate,
-      // initialRoute: RouteGenerator.videosScreen,
-      home: const HomeScreen(),
+      onGenerateRoute: RouteGenerator.generate,
+      initialRoute: RouteGenerator.homeScreen,
     );
   }
 }

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/core/constants.dart';
-import 'package:tiktok_clone/core/routes.dart';
-import 'package:tiktok_clone/core/space_config.dart';
-import 'package:tiktok_clone/views/widgets/custom_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tiktok_clone/views/widgets/custom_text_field.dart';
+
+import '../../../core/constants.dart';
+import '../../../core/routes.dart';
+import '../../../core/space_config.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_field.dart';
 
 /// Issues
 /// Not preview Network image

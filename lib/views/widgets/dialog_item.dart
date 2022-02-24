@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/core/space_config.dart';
+
+import '../../core/space_config.dart';
 
 class DialogItem extends StatelessWidget {
   final IconData iconData;

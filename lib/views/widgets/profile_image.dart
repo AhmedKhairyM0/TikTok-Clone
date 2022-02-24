@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/core/constants.dart';
+
+import '../../core/constants.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({Key? key, this.imagePath, required this.onPressed})

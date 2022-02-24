@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/core/constants.dart';
+
+import '../../core/constants.dart';
 
 class RoundedTextIconButton extends StatelessWidget {
   const RoundedTextIconButton({

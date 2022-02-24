@@ -10,11 +10,11 @@ class Video {
   String username;
   String profilePicture;
 
-  int views;
+  int shareCount;
   List likes;
   int commentCount; // !! Not understood why not List<String>
 
-  String uploadedDate;
+  Timestamp uploadedDate;
 
   String thumbnailUrl;
 
@@ -26,7 +26,7 @@ class Video {
     required this.uid,
     required this.username,
     required this.profilePicture,
-    required this.views,
+    required this.shareCount,
     required this.likes,
     required this.commentCount,
     required this.uploadedDate,
@@ -43,7 +43,7 @@ class Video {
         uid: video['uid'],
         username: video['username'],
         profilePicture: video['profilePicture'],
-        views: video['views'],
+        shareCount: video['views'],
         likes: video['likes'],
         commentCount: video['commentCount'],
         uploadedDate: video['uploadedDate'],
@@ -59,7 +59,7 @@ class Video {
       'uid': uid,
       'username': username,
       'profilePicture': profilePicture,
-      'views': views,
+      'views': shareCount,
       'likes': likes,
       'commentCount': commentCount,
       'uploadedDate': uploadedDate,

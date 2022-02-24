@@ -10,22 +10,24 @@ import 'package:tiktok_clone/views/screens/home_screen.dart';
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
 
-  // late Rx<User?> _user;
+  late Rx<User?> _user;
+
+  User get user => _user.value!;
 
   @override
   void onReady() {
-    // _user = Rx<User?>(firebaseAuth.currentUser);
-    // _user.bindStream(firebaseAuth.authStateChanges());
-    // ever(_user, _setInitialRoute);
+    _user = Rx<User?>(firebaseAuth.currentUser);
+    _user.bindStream(firebaseAuth.authStateChanges());
+    ever(_user, _setInitialRoute);
   }
 
-  // _setInitialRoute(User? user) {
-  //   if (user == null) {
-  //     Get.offAll(() => const LoginScreen());
-  //   } else {
-  //     Get.offAll(() => const HomeScreen());
-  //   }
-  // }
+  _setInitialRoute(User? user) {
+    if (user == null) {
+      Get.offAll(() => const LoginScreen());
+    } else {
+      Get.offAll(() => const HomeScreen());
+    }
+  }
 
   Future<String> _uploadFileToStorage(File file) async {
     var ref = firebaseStorage

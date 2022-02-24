@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:tiktok_clone/core/utils.dart';
-import 'package:tiktok_clone/views/widgets/custom_button.dart';
+import '../../core/utils.dart';
+import '../widgets/custom_button.dart';
 
 class AddVideoScreen extends StatelessWidget {
   const AddVideoScreen({Key? key}) : super(key: key);

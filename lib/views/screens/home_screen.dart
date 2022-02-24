@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok_clone/core/constants.dart';
-import 'package:tiktok_clone/views/screens/add_video_body.dart';
-import 'package:tiktok_clone/views/screens/videos_screen.dart';
-import 'package:tiktok_clone/views/widgets/custom_button.dart';
+
+import '../../core/constants.dart';
+import 'add_video_body.dart';
+import 'videos_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

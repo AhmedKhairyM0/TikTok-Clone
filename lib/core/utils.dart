@@ -113,6 +113,7 @@ Future<File?> showDialogToPickVideo(BuildContext context) async {
             label: "Gallery",
             onPressed: () async {
               var videoPath = await pickVideo(imageSource: ImageSource.gallery);
+              print(videoPath);
               if (videoPath != null) {
                 pickedVideo = File(videoPath);
                 Navigator.pushReplacementNamed(context, RouteGenerator.confirmScreen,

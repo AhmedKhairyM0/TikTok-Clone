@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CircleAnimation extends StatefulWidget {
-  const CircleAnimation({Key? key}) : super(key: key);
+  const CircleAnimation({Key? key, required this.imageUrl}) : super(key: key);
 
+  final String imageUrl;
   @override
   _CircleAnimationState createState() => _CircleAnimationState();
 }
@@ -39,7 +40,7 @@ class _CircleAnimationState extends State<CircleAnimation>
       child: Container(
         width: 50,
         height: 50,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -47,7 +48,7 @@ class _CircleAnimationState extends State<CircleAnimation>
         child: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(25)),
           child: Image.network(
-            "https://firebasestorage.googleapis.com/v0/b/tiktok-clone-7c552.appspot.com/o/profile-pictures%2FepJng2jhXAROdqiAlipQHijYgYm2?alt=media&token=0366b9bd-0c2b-4fdd-9540-1b861ad73116",
+            widget.imageUrl,
             fit: BoxFit.cover,
           ),
         ),
