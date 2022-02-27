@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/controller/video_controller.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../core/constants.dart';
@@ -37,6 +38,7 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
   late VideoPlayerController controller;
 
   bool isShownText = false;
+  bool inFavorites = false;
 
   @override
   void initState() {
@@ -48,6 +50,7 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
         controller.setVolume(1);
         controller.setLooping(true);
       });
+
   }
 
   @override
@@ -91,16 +94,15 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
                   AutoSizeText(videoInfo.title),
                   const VerticalSpace(value: 5),
                   StatefulBuilder(builder: (context, setstate) {
-
                     var caption = Text(
-                          videoInfo.caption,
-                          maxLines: isShownText ? 5 : 1,
-                          style: TextStyle(
-                            overflow: isShownText
-                                ? TextOverflow.visible
-                                : TextOverflow.ellipsis,
-                          ),
-                        );
+                      videoInfo.caption,
+                      maxLines: isShownText ? 5 : 1,
+                      style: TextStyle(
+                        overflow: isShownText
+                            ? TextOverflow.visible
+                            : TextOverflow.ellipsis,
+                      ),
+                    );
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -140,7 +142,13 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
                     margin: const EdgeInsets.only(
                       right: 5,
                     ),
-                    child: const FavIconAnimation(),
+                    child: FavIconAnimation(
+                      isFavorite: videoInfo.likes.contains(authController.user.uid),
+                      onPressed: () async {
+                        await VideoController.instance
+                            .likeOrDislikeVideo(videoInfo.id);
+                      },
+                    ),
                     width: 50,
                     height: 50,
                   ),

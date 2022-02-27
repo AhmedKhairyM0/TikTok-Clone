@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class FavIconAnimation extends StatefulWidget {
-  const FavIconAnimation({Key? key}) : super(key: key);
-
+  const FavIconAnimation(
+      {Key? key, required this.onPressed, required this.isFavorite})
+      : super(key: key);
+  final VoidCallback onPressed;
+  final bool isFavorite;
   @override
   _FavIconAnimationState createState() => _FavIconAnimationState();
 }
@@ -21,15 +24,18 @@ class _FavIconAnimationState extends State<FavIconAnimation>
       vsync: this,
       duration: const Duration(milliseconds: 400),
     );
-
-    _colorAnimation =
-        ColorTween(begin: Colors.white, end: Colors.red).animate(_controller);
+    Color begin = Colors.white;
+    Color end = Colors.red;
+    if (widget.isFavorite) {
+      begin = Colors.red;
+      end = Colors.white;
+    }
+    _colorAnimation = ColorTween(begin: begin, end: end).animate(_controller);
 
     _sizeAnimation = TweenSequence(<TweenSequenceItem<double>>[
       TweenSequenceItem(tween: Tween<double>(begin: 40, end: 45), weight: 50),
       TweenSequenceItem(tween: Tween<double>(begin: 45, end: 40), weight: 50),
     ]).animate(_controller);
-
   }
 
   @override
@@ -39,6 +45,7 @@ class _FavIconAnimationState extends State<FavIconAnimation>
         builder: (context, _) {
           return IconButton(
             onPressed: () {
+              widget.onPressed();
               if (_controller.status == AnimationStatus.completed) {
                 _controller.reverse();
               } else if (_controller.status == AnimationStatus.dismissed) {

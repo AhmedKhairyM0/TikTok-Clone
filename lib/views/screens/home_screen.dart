@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/views/screens/profile_screen.dart';
 
 import '../../core/constants.dart';
 import 'add_video_body.dart';
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Center(child: Text('Search')),
     AddVideoScreen(),
     Center(child: Text('Messages')),
-    Center(child: Text('Profile')),
+    ProfileScreen(),
   ];
 
   @override
